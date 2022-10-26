@@ -1,5 +1,3 @@
-document.querySelectorAll('.data_input').remove();
-
 function concatenate(a, b) {
     return parseFloat(`${a}${b}`);    
 }
