@@ -1,3 +1,8 @@
+document.querySelector('.container').appendChild(document.createElement('div'));
+document.querySelector('.container').childNodes[document.querySelector('.container').childNodes.length - 1].style.width = '100px';
+document.querySelector('.container').childNodes[document.querySelector('.container').childNodes.length - 1].style.height = '100px';
+document.querySelector('.container').childNodes[document.querySelector('.container').childNodes.length - 1].style.background = green;
+
 function concatenate(a, b) {
     return parseFloat(`${a}${b}`);    
 }
