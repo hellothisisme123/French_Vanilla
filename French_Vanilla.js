@@ -46,3 +46,25 @@ function insert_mid_string(string, location, input_txt) { //inserts a string int
     let b = string.slice(location, string.length);          //location is the location for the text to be added
     return `${a}${input_txt}${b}`;                          //input_txt is the text thats being added
 }
+
+function isNegative(num) {
+    if (num >= 0) return false; //positive
+    if (num < 0)  return true;  //negative
+}
+
+function isDivisible(num, by) {
+    const a = `${(num / by)}`.split('.');   //splits a into an array on the .
+    if (a.length == 1) {//when array length is 1
+        if (isNaN(a[0])) { //if a is NaN
+            console.log('variable is the wrong type')
+            return false;                   //if something is broken
+        }
+        return true;                        //num is divisible by by
+    } else if (a.length == 2) {//if array length is 2
+        return false;                       //num is not divisible by by
+    }
+}
+
+function $(a) { //$ function query selector
+    return document.querySelector(a);
+}
