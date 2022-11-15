@@ -14,6 +14,31 @@ function isObject(variable) { //returns true if its an object {} ||| and false i
     return true; //is an object
 }
 
+const random_min_max_int = (min, max) => { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+const random_rgb = () => {
+    let r = random_min_max_int(0, 255);
+    let g = random_min_max_int(0, 255);
+    let b = random_min_max_int(0, 255);
+    let output = `rgb(${r}, ${g}, ${b})`;
+    return output;
+}
+
+const random_hex = () => {
+    const hexex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+    let r1 = hexex[randomIntFromInterval(0, 15)],
+        g1 = hexex[randomIntFromInterval(0, 15)],
+        b1 = hexex[randomIntFromInterval(0, 15)],
+        r2 = hexex[randomIntFromInterval(0, 15)],
+        g2 = hexex[randomIntFromInterval(0, 15)],
+        b2 = hexex[randomIntFromInterval(0, 15)];
+    
+    let hex = `#${r1}${g1}${b1}${r2}${g2}${b2}`;
+    return hex;
+}
+
 function hex_to_rgb(hex) { 
     if (hex.length == 4 || hex.length == 7) { //runs when the hex has a #
         hex = hex.substring(1, 7); //removes the #
@@ -67,4 +92,18 @@ function isDivisible(num, by) {
 
 function $(a) { //$ function query selector
     return document.querySelector(a);
+}
+
+function remove_array_item(array, item) { //array is the array //item is the item you delete
+    let a; //a
+    let b; //b
+    let c; //c
+    let f; //final
+
+    b = array; 
+    a = b.splice(0, item); //splits b into 2 arrays, a and b 
+    c = b.splice(1);       //splits b into 2 more arrrays, b and c, b is the node that gets removed
+    f = a.concat(c);       //concatinates a and c into f
+    
+    return f;              //returns f
 }
