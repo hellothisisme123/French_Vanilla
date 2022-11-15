@@ -1,8 +1,8 @@
-function concatenate(a, b) {
+const concatenate = (a, b) => {
     return parseFloat(`${a}${b}`);    
 }
 
-function isObject(variable) { //returns true if its an object {} ||| and false if its not
+const isObject = (variable) => { //returns true if its an object {} ||| and false if its not
     let str_variable = `${variable}`; //sets str_variable to variable but as a string
     str_variable = str_variable.charAt(0); //sets to the first letter inside str_variable
     if (typeof variable === 'string' || variable instanceof String) { //runs when string
@@ -39,7 +39,7 @@ const random_hex = () => {
     return hex;
 }
 
-function hex_to_rgb(hex) { 
+const hex_to_rgb = (hex) => { 
     if (hex.length == 4 || hex.length == 7) { //runs when the hex has a #
         hex = hex.substring(1, 7); //removes the #
     } 
@@ -66,18 +66,18 @@ function hex_to_rgb(hex) {
     return hex;
 }
 
-function insert_mid_string(string, location, input_txt) { //inserts a string into the middle of another string
+const insert_mid_string = (string, location, input_txt) => { //inserts a string into the middle of another string
     let a = string.slice(0, -(string.length - location));   //string is the initial string
     let b = string.slice(location, string.length);          //location is the location for the text to be added
     return `${a}${input_txt}${b}`;                          //input_txt is the text thats being added
 }
 
-function isNegative(num) {
+const isNegative = (num) => {
     if (num >= 0) return false; //positive
     if (num < 0)  return true;  //negative
 }
 
-function isDivisible(num, by) {
+const isDivisible = (num, by) => {
     const a = `${(num / by)}`.split('.');   //splits a into an array on the .
     if (a.length == 1) {//when array length is 1
         if (isNaN(a[0])) { //if a is NaN
@@ -90,11 +90,11 @@ function isDivisible(num, by) {
     }
 }
 
-function $(a) { //$ function query selector
+const $ = (a) => { //$ function query selector
     return document.querySelector(a);
 }
 
-function remove_array_item(array, item) { //array is the array //item is the item you delete
+const remove_array_item = (array, item) => { //array is the array //item is the item you delete
     let a; //a
     let b; //b
     let c; //c
