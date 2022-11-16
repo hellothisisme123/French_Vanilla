@@ -28,12 +28,12 @@ const random_rgb = () => { //rgb(r, g, b) :string
 
 const random_hex = () => { //#abcdef :string
     const hexex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
-    let r1 = hexex[randomIntFromInterval(0, 15)],   //red 1
-        g1 = hexex[randomIntFromInterval(0, 15)],   //green 1
-        b1 = hexex[randomIntFromInterval(0, 15)],   //blue 1
-        r2 = hexex[randomIntFromInterval(0, 15)],   //red 2
-        g2 = hexex[randomIntFromInterval(0, 15)],   //green 2
-        b2 = hexex[randomIntFromInterval(0, 15)];   //blue 2
+    let r1 = hexex[random_min_max_int(0, 15)],   //red 1
+        g1 = hexex[random_min_max_int(0, 15)],   //green 1
+        b1 = hexex[random_min_max_int(0, 15)],   //blue 1
+        r2 = hexex[random_min_max_int(0, 15)],   //red 2
+        g2 = hexex[random_min_max_int(0, 15)],   //green 2
+        b2 = hexex[random_min_max_int(0, 15)];   //blue 2
     
     let hex = `#${r1}${g1}${b1}${r2}${g2}${b2}`;    //sets output
     return hex;
