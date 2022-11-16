@@ -18,24 +18,24 @@ const random_min_max_int = (min, max) => { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-const random_rgb = () => {
-    let r = random_min_max_int(0, 255);
-    let g = random_min_max_int(0, 255);
-    let b = random_min_max_int(0, 255);
-    let output = `rgb(${r}, ${g}, ${b})`;
+const random_rgb = () => { //rgb(r, g, b) :string
+    let r = random_min_max_int(0, 255); //random red
+    let g = random_min_max_int(0, 255); //random green
+    let b = random_min_max_int(0, 255); //random blue
+    let output = `rgb(${r}, ${g}, ${b})`; //sets output
     return output;
 }
 
-const random_hex = () => {
+const random_hex = () => { //#abcdef :string
     const hexex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
-    let r1 = hexex[randomIntFromInterval(0, 15)],
-        g1 = hexex[randomIntFromInterval(0, 15)],
-        b1 = hexex[randomIntFromInterval(0, 15)],
-        r2 = hexex[randomIntFromInterval(0, 15)],
-        g2 = hexex[randomIntFromInterval(0, 15)],
-        b2 = hexex[randomIntFromInterval(0, 15)];
+    let r1 = hexex[randomIntFromInterval(0, 15)],   //red 1
+        g1 = hexex[randomIntFromInterval(0, 15)],   //green 1
+        b1 = hexex[randomIntFromInterval(0, 15)],   //blue 1
+        r2 = hexex[randomIntFromInterval(0, 15)],   //red 2
+        g2 = hexex[randomIntFromInterval(0, 15)],   //green 2
+        b2 = hexex[randomIntFromInterval(0, 15)];   //blue 2
     
-    let hex = `#${r1}${g1}${b1}${r2}${g2}${b2}`;
+    let hex = `#${r1}${g1}${b1}${r2}${g2}${b2}`;    //sets output
     return hex;
 }
 
